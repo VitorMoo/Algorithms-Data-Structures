@@ -1,15 +1,30 @@
 #include<iostream>
 using namespace std;
 
-void regressiva(int i){
+/*void countdown(int i){
     if(i>=1){
         cout<<i<<endl;
-        regressiva(i-1);
+        countdown(i-1);
     }
 }
+
 int main (){
+    countdown(10);
+    return 0;
+}
+*/
 
-regressiva(10);
+void diminui(int n){
+    cout<<n<<endl;
+    if(n==0){
+        cout<<"fim"<<endl;
+        return;
+    }
+    diminui(n-1);
+}
+int main(){
 
-return 0;
+    diminui(10);
+    
+    return 0;
 }
