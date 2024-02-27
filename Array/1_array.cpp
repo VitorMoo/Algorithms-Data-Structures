@@ -13,10 +13,13 @@ int main(){
 // dynamic array
 
     int n =5;
-    vector<int>v(n);//={0,0,0,0,0}
-    v.push_back(8);// insertion at the end -> O(1)
+    vector<int>v(n);//={0,0,0,0,0} initially has size 5
+    v.push_back(8);// insertion at the end -> O(1), than grows 1,and the vectors size copy and double the original size
+    
     v[1]=7;//O(1)
+    
     v.pop_back();// remotion at the end -> O(1)
+    cout << v.size() << ' ' << v.capacity() << '\n';
 
 //strings
 
@@ -42,6 +45,9 @@ int main(){
         cout << "A substring 'amo' não foi encontrada." << endl;
     }//find is O(n) time
 
+
+
+
     string verb = base.substr(3,3);
     //verb= "amo"
 
@@ -49,16 +55,7 @@ int main(){
 
     int position=base.find("amo");
     verb=base.substr(position,word_to_find.size());
-
-
-
-
-
-
-
-
-
-
+    //O(n) time where n is the size of the substring
 
 
 //Access at an index -> O(1)
@@ -66,6 +63,6 @@ int main(){
 //insertion at the end -> O(1) 
 //insertion at another positions -> O(n)
 //Remotion at the end -> O(1)
-//Remotion at anothes positions -> O(n)
+//Remotion at another positions -> O(n)
 return 0;
 }

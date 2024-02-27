@@ -2,6 +2,7 @@
 
 int main() {
     int array[100], high, low, mid, n, key;
+    int count=0;
 
     printf("Enter the number of elements in the array: ");
     scanf("%i", &n);
@@ -20,7 +21,7 @@ int main() {
 
     while (low <= high) {
         mid = (low + high) / 2;
-
+        count++;
         if (key == array[mid]) {
             printf("Found at position %i.\n", mid + 1);
             break; 
@@ -33,6 +34,6 @@ int main() {
     if (low > high) {
         printf("Number not found in the array.\n");
     }
-
+    printf("How many steps did it take?%i",count);
     return 0;
 }
