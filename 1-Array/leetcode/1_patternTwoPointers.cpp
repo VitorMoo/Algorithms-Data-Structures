@@ -7,9 +7,9 @@ using namespace std;
 
 // "arara"
 // "radar"
-// ""
+// " "
 
-//complexitys:
+//complexities:
 // O(n) time
 // O(1) space
 
