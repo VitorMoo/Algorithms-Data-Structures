@@ -12,40 +12,37 @@ Input: head = [1,2], n = 1
 Output: [1]
  */
 
-
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode* fast = head;
+        if (head == nullptr) return nullptr;
+
         ListNode* slow = head;
+        ListNode* fast = head;              //creating the pointers
         ListNode* temp = nullptr;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; ++i) {       //calculates the number of steps that fast will move
             if (fast == nullptr) {
                 return nullptr;
             }
-            fast = fast->next;
+            fast = fast->next;         
         }
 
-        ListNode* prev = nullptr;
-
-        while (fast != nullptr) {
-            prev = slow;
-            slow = slow->next;
-            fast = fast->next;
-        }
-
-        if (prev != nullptr) {
-            temp = prev->next;
-            prev->next = prev->next->next;
-            delete temp;
-        } else {
-            temp = head;
+        if (fast == nullptr) {     //verifies if the fast pointer reached the end of the list during the process to move fast n times
+            temp = head;/          ///can be changed to a dummy node
             head = head->next;
             delete temp;
             return head;
         }
-        
-        return head;
+
+        while (fast->next != nullptr) {
+            slow = slow->next;              //move fast and slow by one step
+            fast = fast->next;
+        }
+
+        temp = slow->next;
+        slow->next = slow->next->next;      //slow->next will be the node that we want to remove
+        delete temp;                        //so we say that temp is equal to the node that we want to re   move
+        return head;                        //and slow->next is equal to next next, connecting the node and removing the temp node
     }
 };

@@ -2,9 +2,10 @@
 using namespace std;
 
 /*LINKED LISTS
-its a sequence of elements(nodes), HEAD is a pointer that points to the first node of the list.
-each node has two components, the data and a pointer -> to the next node of the list.
-|HEAD->| |1->| |2->| |3->| |4->| |->5| TAIL.
+like arrays, a linked list is used to represent sequential data.
+ It is a linear collection of data elements whose order is not given by their physical placement in memory, as opposed to arrays, where data is stored in sequential blocks of memory.
+Instead, each element contains an address of the next element.
+It is a data structure consisting of a collection of nodes which together represent a sequence.
 
 pros
 inserts and delets at constant time O(1)
