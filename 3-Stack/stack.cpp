@@ -1,4 +1,9 @@
-//implementing a stack from scratch using linked Lists
+/*A stack is an abstract data type that supports the operations push 
+(insert a new element on the top of the stack) and pop (remove and return the most recently added element,
+ the element at the top of the stack).
+ This behavior is commonly called LIFO (last in, first out).
+ 
+    */
 #include<iostream>
 #include <climits>
 using namespace std;
